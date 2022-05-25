@@ -1,4 +1,4 @@
-# Video-Shere-distributed-app
+# Distributed application for Video Shere
 </hr>
 C#, Entity Framework, Web Api, Data, Repositories, Swagger
  <br> Open Api:
