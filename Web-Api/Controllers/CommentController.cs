@@ -1,6 +1,7 @@
 ﻿using ApplicationService.DTOs;
 using ApplicationService.Implementations;
 using System.Web.Http;
+using Web_Api.Messages;
 
 namespace Web_Api.Controllers
 {
@@ -15,30 +16,68 @@ namespace Web_Api.Controllers
         }
 
         [HttpGet]
+        [Route("api/comment/{id}")]
         public IHttpActionResult GetComment(int id)
         {
             return Json(service.GetById(id));
         }
+
+        [Authorize]
+        [Route("api/comment/{id}")]
         [HttpDelete]
         public IHttpActionResult DeleteComment(int id)
         {
+            ResponseMessages response = new ResponseMessages();
             if (service.Delete(id))
             {
-                return Json("Delete was successful");
+                response.Code = 200;
+                response.Body = "Comment is deleted.";
             }
-            else return Json("Delete was not successful");
+            else
+            {
+                response.Code = 500;
+                response.Body = "Comment is not deleted.";
+            }
+
+            return Json(response);
         }
 
+        [Authorize]
         [HttpPost]
         public IHttpActionResult PostComment(CommentDTO CommentDTO)
         {
-            if (service.Save(CommentDTO))
+            ResponseMessages response = new ResponseMessages();
+            if (CommentDTO.Id > 0)
             {
-                return Json("The post was successful");
+
+                if (service.Update(CommentDTO))
+                {
+                    response.Code = 200;
+                    response.Body = "Comment is updated.";
+                }
+                else
+                {
+                    response.Code = 500;
+                    response.Body = "Comment is not updated.";
+                }
             }
-            else return Json("The post was NOT successful");
+            else
+            {
+                if (service.Save(CommentDTO))
+                {
+                    response.Code = 200;
+                    response.Body = "Comment is saved.";
+                }
+                else
+                {
+                    response.Code = 500;
+                    response.Body = "Comment is not saved.";
+                }
+            }
+            return Json(response);
         }
 
+        [Authorize]
         [HttpPut]
         public IHttpActionResult EditComment(CommentDTO CommentDTO)
         {

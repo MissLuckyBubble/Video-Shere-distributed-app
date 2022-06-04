@@ -22,9 +22,6 @@ namespace Data.Entities
         [ForeignKey("VideoId")]
         public virtual Video Video { get; set; }
 
-        public int? ParentCommentId { get; set; }
-        [ForeignKey("ParentCommentId")]
-        public virtual Comment ParentComment { get; set; }
 
     }
 }

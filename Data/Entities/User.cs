@@ -21,7 +21,7 @@ namespace Data.Entities
         public DateTime DateOfBirth { get; set; }
         [StringLength(10)]
         public string Gender { get; set; }
-        [StringLength(20)]
+        [StringLength(200)]
         public string ProfilePictureLink { get; set; }
     }
 }

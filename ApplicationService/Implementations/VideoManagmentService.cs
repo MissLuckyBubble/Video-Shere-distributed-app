@@ -28,6 +28,20 @@ namespace ApplicationService.Implementations
                         Dislikes = item.Dislikes,
                         Description = item.Description,
                         OwnerId = item.OwnerId,
+                        Owner = new UserDTO
+                        {
+                            Id = item.Owner.Id,
+                            Username = item.Owner.Username,
+                            Age = item.Owner.Age,
+                            Country = item.Owner.Country,
+                            CreateDate = item.Owner.CreateDate,
+                            DateOfBirth = item.Owner.DateOfBirth,
+                            Description = item.Owner.Description,
+                            Gender = item.Owner.Gender,
+                            Password = item.Owner.Password,
+                            ProfilePictureLink = item.Owner.ProfilePictureLink,
+                            UpdateDate = item.Owner.UpdateDate
+                        }
                     });
                 }
             }

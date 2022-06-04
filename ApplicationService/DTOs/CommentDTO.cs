@@ -15,9 +15,10 @@ namespace ApplicationService.DTOs
         public int Dislikes { get; set; }
 
         public int OwnerId { get; set; }
+        public UserDTO Owner { get; set; }
 
         public int VideoId { get; set; }
+        public VideoDTO Video { get; set; }
 
-        public int? ParentCommentId { get; set; }
     }
 }

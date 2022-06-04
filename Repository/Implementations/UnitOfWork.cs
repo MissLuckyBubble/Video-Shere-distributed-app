@@ -8,7 +8,7 @@ namespace Repository.Implementations
 {
     public class UnitOfWork : IDisposable
     {
-        private VideoDbContext context = new VideoDbContext();
+        private readonly VideoDbContext context = new VideoDbContext();
         private GenericRepository<User> userRepository;
         private GenericRepository<Video> videoRepository;
         private GenericRepository<Comment> commentRepository;

@@ -64,6 +64,14 @@
     <Compile Include="Migrations\202205250802101_make the parent coment nullable.designer.cs">
       <DependentUpon>202205250802101_make the parent coment nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206012003099_updateLinkLenght.cs" />
+    <Compile Include="Migrations\202206012003099_updateLinkLenght.designer.cs">
+      <DependentUpon>202206012003099_updateLinkLenght.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206021125177_delete perentcommeent from database.cs" />
+    <Compile Include="Migrations\202206021125177_delete perentcommeent from database.designer.cs">
+      <DependentUpon>202206021125177_delete perentcommeent from database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205250802101_make the parent coment nullable.resx">
       <DependentUpon>202205250802101_make the parent coment nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206012003099_updateLinkLenght.resx">
+      <DependentUpon>202206012003099_updateLinkLenght.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206021125177_delete perentcommeent from database.resx">
+      <DependentUpon>202206021125177_delete perentcommeent from database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,6 @@ namespace ApplicationService.DTOs
         public string Description { get; set; }
 
         public int OwnerId { get; set; }
-      
+        public UserDTO Owner { get; set; }
     }
 }
